@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon.com : magnesium lotion</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Amazon Ember", Arial, sans-serif; background: #fff; color: #0F1111; font-size: 14px; }
+
+  /* ===== TOP NAV ===== */
+  .nav-top { background: #131921; padding: 8px 16px; display: flex; align-items: center; gap: 12px; }
+  .nav-logo { height: 31px; margin-right: 4px; }
+  .nav-logo img { height: 100%; }
+  .nav-deliver { color: #ccc; font-size: 12px; line-height: 1.2; }
+  .nav-deliver span { color: #fff; font-weight: 700; font-size: 14px; display: block; }
+  .nav-search { flex: 1; display: flex; height: 40px; border-radius: 4px; overflow: hidden; }
+  .nav-search-cat { background: #e6e6e6; border: none; padding: 0 8px; font-size: 12px; color: #555; border-radius: 4px 0 0 4px; cursor: pointer; }
+  .nav-search-input { flex: 1; border: none; padding: 0 10px; font-size: 15px; outline: none; }
+  .nav-search-btn { background: #febd69; border: none; width: 46px; display: flex; align-items: center; justify-content: center; cursor: pointer; border-radius: 0 4px 4px 0; }
+  .nav-search-btn svg { width: 22px; height: 22px; }
+  .nav-right { display: flex; align-items: center; gap: 18px; color: #fff; font-size: 12px; }
+  .nav-right-item { cursor: pointer; }
+  .nav-right-item .line1 { color: #ccc; }
+  .nav-right-item .line2 { font-weight: 700; font-size: 14px; }
+  .nav-cart { display: flex; align-items: center; gap: 2px; color: #fff; font-weight: 700; font-size: 16px; }
+  .nav-cart-count { color: #f08804; font-size: 16px; font-weight: 700; position: relative; top: -6px; }
+
+  /* ===== SUB NAV ===== */
+  .nav-sub { background: #232f3e; padding: 6px 16px; display: flex; align-items: center; gap: 14px; }
+  .nav-sub a { color: #fff; text-decoration: none; font-size: 13px; white-space: nowrap; }
+  .nav-sub a:hover { text-decoration: underline; }
+
+  /* ===== BREADCRUMB ===== */
+  .breadcrumb { padding: 10px 20px; font-size: 12px; color: #565959; }
+  .breadcrumb a { color: #565959; text-decoration: none; }
+  .breadcrumb a:hover { color: #c45500; text-decoration: underline; }
+
+  /* ===== RESULTS BAR ===== */
+  .results-bar { padding: 6px 20px 10px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e3e6e6; }
+  .results-info { font-size: 14px; color: #565959; }
+  .results-info span { color: #c45500; font-weight: 700; }
+  .sort-by select { padding: 4px 8px; border: 1px solid #888; border-radius: 4px; font-size: 13px; }
+
+  /* ===== MAIN LAYOUT ===== */
+  .main-content { display: flex; max-width: 1500px; margin: 0 auto; }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar { width: 220px; min-width: 220px; padding: 16px 12px; border-right: 1px solid #e3e6e6; }
+  .sidebar h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .sidebar ul { list-style: none; margin-bottom: 16px; }
+  .sidebar ul li { font-size: 13px; padding: 2px 0; }
+  .sidebar ul li a { color: #0F1111; text-decoration: none; }
+  .sidebar ul li a:hover { color: #c45500; }
+  .filter-section { margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #e3e6e6; }
+  .filter-section h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .star-filter { display: flex; align-items: center; gap: 4px; font-size: 12px; color: #0F1111; text-decoration: none; padding: 2px 0; }
+  .star-filter:hover { color: #c45500; }
+
+  /* ===== PRODUCT GRID ===== */
+  .product-grid { flex: 1; padding: 16px 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+
+  /* ===== PRODUCT CARD ===== */
+  .product-card { border: 1px solid #e3e6e6; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; position: relative; background: #fff; transition: box-shadow 0.2s; }
+  .product-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  .product-img-wrap { height: 260px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+  .product-img-wrap img { max-height: 260px; max-width: 100%; object-fit: contain; }
+  .badge-wrap { margin-bottom: 4px; display: flex; gap: 4px; flex-wrap: wrap; }
+  .badge-best-seller { display: inline-flex; align-items: center; background: #E77600; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 2px; }
+  .badge-amazons-choice { display: inline-flex; align-items: center; background: #232f3e; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 2px; }
+  .badge-amazons-choice::before { content: ""; display: inline-block; width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid #232f3e; position: absolute; top: -5px; left: 10px; }
+  .product-title { font-size: 14px; color: #0F1111; line-height: 1.35; margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-decoration: none; }
+  .product-title:hover { color: #c45500; }
+  .product-title a { color: inherit; text-decoration: none; }
+  .product-title a:hover { color: #c45500; }
+
+  /* Stars */
+  .stars-row { display: flex; align-items: center; gap: 4px; margin-bottom: 3px; }
+  .stars { display: inline-flex; align-items: center; color: #de7921; font-size: 15px; letter-spacing: -0.5px; }
+  .stars-num { font-size: 12px; color: #de7921; font-weight: 700; }
+  .review-count { font-size: 12px; color: #007185; cursor: pointer; }
+  .review-count:hover { color: #c45500; text-decoration: underline; }
+  .bought-past { font-size: 12px; color: #565959; margin-bottom: 4px; }
+
+  /* Price section */
+  .price-section { margin-bottom: 4px; }
+  .price-main { display: flex; align-items: baseline; gap: 2px; }
+  .price-symbol { font-size: 13px; vertical-align: top; }
+  .price-whole { font-size: 24px; font-weight: 400; line-height: 1; }
+  .price-fraction { font-size: 13px; vertical-align: top; }
+  .price-per-unit { font-size: 12px; color: #565959; }
+  .price-list { font-size: 12px; color: #565959; margin-top: 2px; }
+  .price-list-label { font-size: 11px; }
+  .price-strikethrough { text-decoration: line-through; color: #565959; }
+  .discount-pct { color: #CC0C39; font-size: 12px; font-weight: 700; }
+
+  /* Coupon */
+  .coupon-badge { display: flex; align-items: center; gap: 4px; margin: 4px 0; padding: 3px 6px; border: 1px dashed #0F8A32; border-radius: 4px; background: #f0faf0; }
+  .coupon-check { width: 14px; height: 14px; background: #0F8A32; border-radius: 2px; display: flex; align-items: center; justify-content: center; }
+  .coupon-check svg { width: 10px; height: 10px; fill: #fff; }
+  .coupon-text { font-size: 12px; color: #0F8A32; font-weight: 500; }
+
+  /* Size badge */
+  .size-badge { font-size: 12px; color: #0F1111; margin-bottom: 4px; }
+  .size-badge strong { font-weight: 700; }
+
+  /* Prime / shipping */
+  .prime-row { display: flex; align-items: center; gap: 6px; margin: 4px 0; }
+  .prime-logo { height: 16px; }
+  .prime-text { font-size: 12px; color: #0F1111; }
+  .shipping-info { font-size: 12px; color: #565959; }
+  .delivery-date { color: #0F1111; font-weight: 700; }
+
+  /* Add to Cart */
+  .add-to-cart { background: #ffd814; border: 1px solid #fcd200; border-radius: 20px; padding: 6px 16px; font-size: 13px; cursor: pointer; text-align: center; margin-top: auto; width: 100%; font-weight: 400; }
+  .add-to-cart:hover { background: #f7ca00; }
+
+  /* Star SVG */
+  .star-svg { display: inline-block; width: 15px; height: 15px; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .sidebar { display: none; }
+    .product-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  }
+
+  /* Prime badge inline SVG */
+  .prime-badge { display: inline-flex; align-items: center; }
+  .prime-badge svg { height: 16px; }
+
+  /* Overnight delivery */
+  .fastest-delivery { font-size: 12px; color: #0F1111; }
+  .fastest-delivery strong { font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP NAV ===== -->
+<div class="nav-top">
+  <div class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 602.28 181.499" height="31">
+      <path fill="#FF9900" d="M373.642 141.938c-34.999 25.797-85.729 39.561-129.406 39.561-61.243 0-116.377-22.651-158.088-60.325-3.277-2.963-.341-7.005 3.592-4.7 45.014 26.191 100.67 41.947 158.166 41.947 38.775 0 81.429-8.022 120.65-24.67 5.925-2.517 10.88 3.879 5.086 8.187"/>
+      <path fill="#FF9900" d="M386.987 126.768c-4.463-5.716-29.572-2.706-40.846-1.366-3.429.418-3.954-2.569-.865-4.718 20.003-14.079 52.824-10.015 56.648-5.3 3.826 4.729-.991 37.545-19.787 53.2-2.891 2.407-5.649 1.126-4.371-2.065 4.24-10.593 13.758-34.312 9.221-39.751"/>
+      <path fill="#fff" d="M347.064 20.777V6.439c0-2.18 1.652-3.631 3.631-3.631h64.214c2.065 0 3.717 1.497 3.717 3.631v12.275c-.022 2.087-1.784 4.818-4.906 9.108l-33.266 47.505c12.364-.308 25.415 1.542 36.623 7.875 2.527 1.432 3.21 3.529 3.408 5.594v15.297c0 2.087-2.307 4.529-4.727 3.263-19.743-10.345-45.96-11.469-67.787.11-2.22 1.31-4.549-1.198-4.549-3.285v-14.529c0-2.329.022-6.307 2.351-9.85l38.555-55.313h-33.566c-2.065 0-3.717-1.475-3.717-3.609l.02-.002zm-220.9 89.894h-19.523c-1.872-.132-3.344-1.542-3.498-3.346V6.637c0-2.02 1.696-3.631 3.784-3.631h18.182c1.894.088 3.41 1.542 3.564 3.368v13.056h.352c4.771-12.627 13.758-18.507 25.877-18.507 12.298 0 19.985 5.88 25.503 18.507 4.749-12.627 15.539-18.507 27.218-18.507 8.252 0 17.281 3.409 22.799 11.049 6.275 8.495 4.991 20.843 4.991 31.672l-.022 63.472c0 2.02-1.696 3.653-3.783 3.653H212.07c-1.96-.154-3.52-1.696-3.52-3.653V55.152c0-4.262.374-14.882-.55-18.927-1.476-6.802-5.891-8.714-11.601-8.714-4.771 0-9.762 3.189-11.799 8.296-2.043 5.107-1.849 13.645-1.849 19.345v51.962c0 2.02-1.696 3.653-3.783 3.653h-19.523c-1.96-.154-3.52-1.696-3.52-3.653l-.022-51.962c0-11.269 1.85-27.841-12.145-27.841-14.122 0-13.574 16.17-13.574 27.841v51.962c0 2.02-1.696 3.653-3.783 3.653l.022-.022zm350.282-90.312c-29.004 0-44.715 24.912-44.715 56.584 0 30.55 17.37 54.885 44.715 54.885 27.966 0 43.133-25.478 43.133-56.01 0-31.105-16.826-55.459-43.133-55.459zm.176 20.469c14.168 0 15.055 19.301 15.055 31.321 0 12.042-.198 37.789-14.879 37.789-14.476 0-15.165-20.777-15.165-33.44 0-8.318.374-18.287 2.461-26.213 1.826-6.89 5.467-9.457 12.528-9.457zM553.2 110.671h-19.413c-1.96-.154-3.52-1.696-3.52-3.653l-.022-97.455c.176-1.85 1.806-3.29 3.783-3.29h18.072c1.716.088 3.122 1.288 3.476 2.904v14.904h.352c5.467-13.491 13.134-19.921 26.628-19.921 8.824 0 17.413 3.189 22.931 12.042 5.122 8.209 5.122 21.999 5.122 31.87v59.386c-.22 1.762-1.828 3.168-3.783 3.168h-19.611c-1.828-.154-3.3-1.474-3.476-3.168V53.78c0-11.049 1.278-27.203-12.321-27.203-4.793 0-9.19 3.211-11.382 8.076-2.769 6.164-3.122 12.283-3.122 19.127v53.312c-.022 2.02-1.74 3.653-3.827 3.653l.033-.074zM302.063 62.45c0 7.678.198 14.088-3.695 20.931-3.144 5.572-8.142 8.999-13.684 8.999-7.59 0-12.035-5.792-12.035-14.33 0-16.852 15.099-19.917 29.414-19.917v4.317zm19.963 48.265c-1.298 1.166-3.188 1.254-4.661.462-6.561-5.45-7.722-7.986-11.315-13.183-10.806 11.027-18.484 14.33-32.454 14.33-16.584 0-29.48-10.233-29.48-30.704 0-15.989 8.648-26.862 21.018-32.19 10.718-4.7 25.679-5.55 37.132-6.846v-2.549c0-4.7.352-10.255-2.395-14.31-2.395-3.631-7.018-5.129-11.096-5.129-7.524 0-14.256 3.87-15.886 11.886-.33 1.784-1.652 3.521-3.452 3.609l-19.127-2.065c-1.63-.374-3.432-1.696-2.978-4.218C251.247 6.814 274.42.934 295.247.934c10.636 0 24.526 2.835 32.91 10.893 10.636 9.953 9.624 23.245 9.624 37.701v34.138c0 10.277 4.263 14.772 8.274 20.322 1.388 1.98 1.696 4.372-.088 5.858-4.463 3.717-12.406 10.651-16.781 14.528l-7.16-5.659z"/>
+    </svg>
+  </div>
+
+  <div class="nav-deliver">
+    Deliver to<br>
+    <span>&#128205; Ashburn 20146</span>
+  </div>
+
+  <div class="nav-search">
+    <select class="nav-search-cat"><option>All</option></select>
+    <input class="nav-search-input" type="text" value="magnesium lotion" />
+    <button class="nav-search-btn">
+      <svg viewBox="0 0 24 24"><path fill="#333" d="M10 2a8 8 0 105.3 14.7l5 5a1 1 0 001.4-1.4l-5-5A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+    </button>
+  </div>
+
+  <div class="nav-right">
+    <div class="nav-right-item"><span class="line1">Hello, sign in</span><span class="line2">Account & Lists</span></div>
+    <div class="nav-right-item"><span class="line1">Returns</span><span class="line2">& Orders</span></div>
+    <div class="nav-cart"><span class="nav-cart-count">0</span> <svg width="25" height="22" viewBox="0 0 25 22" fill="#fff"><path d="M1 1h3.6l2.4 13h14l2-9H7"/><circle cx="10" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg> Cart</div>
+  </div>
+</div>
+
+<!-- ===== SUB NAV ===== -->
+<div class="nav-sub">
+  <a href="#">&#9776; All</a>
+  <a href="#">Today's Deals</a>
+  <a href="#">Customer Service</a>
+  <a href="#">Registry</a>
+  <a href="#">Gift Cards</a>
+  <a href="#">Sell</a>
+</div>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="breadcrumb">
+  <a href="#">Health & Household</a> &rsaquo; <a href="#">Vitamins & Supplements</a> &rsaquo; <a href="#">Minerals</a> &rsaquo; <a href="#">Magnesium</a>
+</div>
+
+<!-- ===== RESULTS BAR ===== -->
+<div class="results-bar">
+  <div class="results-info">1-48 of over 2,000 results for <span>"magnesium lotion"</span></div>
+  <div class="sort-by">
+    <select>
+      <option>Featured</option>
+      <option>Price: Low to High</option>
+      <option>Price: High to Low</option>
+      <option>Avg. Customer Review</option>
+      <option>Newest Arrivals</option>
+    </select>
+  </div>
+</div>
+
+<!-- ===== MAIN ===== -->
+<div class="main-content">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="filter-section">
+      <h3>Department</h3>
+      <ul>
+        <li><a href="#">Health & Household</a></li>
+        <li style="padding-left:12px;"><a href="#">&rsaquo; Vitamins & Supplements</a></li>
+        <li style="padding-left:24px;"><a href="#"><b>Magnesium</b></a></li>
+        <li><a href="#">Beauty & Personal Care</a></li>
+        <li><a href="#">Baby</a></li>
+      </ul>
+    </div>
+    <div class="filter-section">
+      <h4>Customer Reviews</h4>
+      <a class="star-filter" href="#">
+        <span style="color:#de7921;">&#9733;&#9733;&#9733;&#9733;&#9734;</span> & Up
+      </a>
+      <a class="star-filter" href="#">
+        <span style="color:#de7921;">&#9733;&#9733;&#9733;&#9734;&#9734;</span> & Up
+      </a>
+    </div>
+    <div class="filter-section">
+      <h4>Brand</h4>
+      <ul>
+        <li><a href="#">&#9744; Ancient Minerals</a></li>
+        <li><a href="#">&#9744; Magnum Solace</a></li>
+        <li><a href="#">&#9744; LIFE-FLO</a></li>
+        <li><a href="#">&#9744; Seven Minerals</a></li>
+        <li><a href="#">&#9744; M3 Naturals</a></li>
+        <li><a href="#">&#9744; Venture Pal</a></li>
+        <li><a href="#">&#9744; Solia</a></li>
+      </ul>
+    </div>
+    <div class="filter-section">
+      <h4>Price</h4>
+      <ul>
+        <li><a href="#">Under $10</a></li>
+        <li><a href="#">$10 to $25</a></li>
+        <li><a href="#">$25 to $50</a></li>
+        <li><a href="#">$50 & Above</a></li>
+      </ul>
+    </div>
+    <div class="filter-section">
+      <h4>Climate Pledge Friendly</h4>
+      <ul>
+        <li><a href="#">&#9744; Climate Pledge Friendly</a></li>
+      </ul>
+    </div>
+    <div class="filter-section">
+      <h4>Subscribe & Save</h4>
+      <ul>
+        <li><a href="#">&#9744; Subscribe & Save eligible</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <div class="product-grid">
+
+    <!-- ===== 1. B0F1QHNFJP - Magnum Solace Nighttime ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/41U-jUI+rXL._AC_SL1500_.jpg" alt="Magnum Solace Nighttime Magnesium Lotion" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-best-seller">#1 Best Seller</span>
+        <span class="badge-amazons-choice">Amazon's Choice</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B0F1QHNFJP">Magnum Solace Nighttime Magnesium Lotion with Arnica &mdash; Highly Concentrated Magnesium for Muscles &amp; Joints &mdash; Apply to Legs or Feet Before Bed &mdash; Skin-Friendly</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.4</span>
+        <span class="stars" title="4.4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="review-count">(5,276)</span>
+      </div>
+      <div class="bought-past">40K+ bought in past month</div>
+      <div class="price-section">
+        <div style="display:flex;align-items:baseline;gap:6px;">
+          <span class="discount-pct">-33%</span>
+          <div class="price-main">
+            <span class="price-symbol">$</span><span class="price-whole">9</span><span class="price-fraction">99</span>
+          </div>
+        </div>
+        <div class="price-list">
+          <span class="price-list-label">List: </span><span class="price-strikethrough">$14.99</span>
+        </div>
+        <div class="price-per-unit">($2.00/Fl Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 5 Fl Oz</div>
+      <div class="coupon-badge">
+        <span class="coupon-check"><svg viewBox="0 0 16 16"><path d="M6.5 12.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></svg></span>
+        <span class="coupon-text">Save 20% with coupon</span>
+      </div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 2. B06XXP8YRL - Ancient Minerals ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/61k9ZitD1zL._AC_SL1500_.jpg" alt="Ancient Minerals Magnesium Lotion" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-best-seller">Best Seller</span>
+        <span class="badge-amazons-choice">Amazon's Choice</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B06XXP8YRL">Ancient Minerals Magnesium Lotion &mdash; Zechstein Magnesium Chloride Cream with Shea Butter, Organic Oils &amp; Hyaluronic Acid for Skin Hydration, Non-Greasy Body Lotion, 5oz</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.2</span>
+        <span class="stars" title="4.2 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="review-count">(6,204)</span>
+      </div>
+      <div class="bought-past">3K+ bought in past month</div>
+      <div class="price-section">
+        <div style="display:flex;align-items:baseline;gap:6px;">
+          <span class="discount-pct">-15%</span>
+          <div class="price-main">
+            <span class="price-symbol">$</span><span class="price-whole">19</span><span class="price-fraction">51</span>
+          </div>
+        </div>
+        <div class="price-list">
+          <span class="price-list-label">List: </span><span class="price-strikethrough">$22.95</span>
+        </div>
+        <div class="price-per-unit">($4.24/Fl Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 6.8 Fl Oz</div>
+      <div class="coupon-badge">
+        <span class="coupon-check"><svg viewBox="0 0 16 16"><path d="M6.5 12.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></svg></span>
+        <span class="coupon-text">Save 10% with coupon</span>
+      </div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 3. B0BKLQCJPQ - Magnum Solace Lavender ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/41f9qTJUZML._AC_SL1500_.jpg" alt="Magnum Solace Magnesium Lotion Lavender" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-best-seller">Best Seller</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B0BKLQCJPQ">Magnum Solace Magnesium Lotion &mdash; Nighttime Magnesium Cream &mdash; Apply to Legs, Arms or Chest - Topical Magnesium Chloride &mdash; USA Made and Safe for Kids (Lavender)</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.2</span>
+        <span class="stars" title="4.2 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="review-count">(4,505)</span>
+      </div>
+      <div class="bought-past">1K+ bought in past month</div>
+      <div class="price-section">
+        <div style="display:flex;align-items:baseline;gap:6px;">
+          <span class="discount-pct">-20%</span>
+          <div class="price-main">
+            <span class="price-symbol">$</span><span class="price-whole">19</span><span class="price-fraction">97</span>
+          </div>
+        </div>
+        <div class="price-list">
+          <span class="price-list-label">List: </span><span class="price-strikethrough">$24.95</span>
+        </div>
+        <div class="price-per-unit">($5.00/Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 4.5 Oz</div>
+      <div class="coupon-badge">
+        <span class="coupon-check"><svg viewBox="0 0 16 16"><path d="M6.5 12.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></svg></span>
+        <span class="coupon-text">Save 20% with coupon</span>
+      </div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 4. B09PVMTM9W - LIFE-FLO ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/51NCq08HxXL._AC_SL1500_.jpg" alt="LIFE-FLO Magnesium Lotion" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-best-seller">Best Seller</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B09PVMTM9W">LIFE-FLO Unscented Magnesium Lotion - Highly Concentrated Magnesium Lotion for Kids and Adults - Soothes Overworked Muscles, Joints &mdash; Hypoallergenic, 60-Day Guarantee - 8oz</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.3</span>
+        <span class="stars" title="4.3 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="review-count">(8,986)</span>
+      </div>
+      <div class="bought-past">6K+ bought in past month</div>
+      <div class="price-section">
+        <div style="display:flex;align-items:baseline;gap:6px;">
+          <span class="discount-pct">-25%</span>
+          <div class="price-main">
+            <span class="price-symbol">$</span><span class="price-whole">8</span><span class="price-fraction">76</span>
+          </div>
+        </div>
+        <div class="price-list">
+          <span class="price-list-label">List: </span><span class="price-strikethrough">$11.69</span>
+        </div>
+        <div class="price-per-unit">($1.10/Fl Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 8 Fl Oz</div>
+      <div class="coupon-badge">
+        <span class="coupon-check"><svg viewBox="0 0 16 16"><path d="M6.5 12.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></svg></span>
+        <span class="coupon-text">Save 10% with coupon</span>
+      </div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 5. B06XXR6PRD - Ancient Minerals Ultra MSM ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/61j-9mILSKL._AC_SL1500_.jpg" alt="Ancient Minerals Magnesium Lotion Ultra with MSM" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-best-seller">Best Seller</span>
+        <span class="badge-amazons-choice">Amazon's Choice</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B06XXR6PRD">Ancient Minerals Magnesium Lotion Ultra with MSM Pure Genuine Zechstein Magnesium Lotion for Topical Application (5oz)</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.5</span>
+        <span class="stars" title="4.5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="review-count">(3,809)</span>
+      </div>
+      <div class="price-section">
+        <div style="display:flex;align-items:baseline;gap:6px;">
+          <span class="discount-pct">-15%</span>
+          <div class="price-main">
+            <span class="price-symbol">$</span><span class="price-whole">21</span><span class="price-fraction">21</span>
+          </div>
+        </div>
+        <div class="price-list">
+          <span class="price-list-label">List: </span><span class="price-strikethrough">$24.95</span>
+        </div>
+        <div class="price-per-unit">($4.24/Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 5 Oz</div>
+      <div class="coupon-badge">
+        <span class="coupon-check"><svg viewBox="0 0 16 16"><path d="M6.5 12.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></svg></span>
+        <span class="coupon-text">Save 10% with coupon</span>
+      </div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 6. B0DDCC2THS - Venture Pal ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/71zaZAuufLL._AC_SL1500_.jpg" alt="Venture Pal Magnesium Lotion" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-best-seller">Best Seller</span>
+        <span class="badge-amazons-choice">Amazon's Choice</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B0DDCC2THS">Venture Pal Magnesium Lotion, Topical Magnesium Cream, Fast-Absorbing Moisturizing Lotion with Coconut Oil, Shea Butter &amp; Hyaluronic Acid, Suitable for Kids</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.4</span>
+        <span class="stars" title="4.4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="review-count">(2,131)</span>
+      </div>
+      <div class="bought-past">4K+ bought in past month</div>
+      <div class="price-section">
+        <div style="display:flex;align-items:baseline;gap:6px;">
+          <span class="discount-pct">-32%</span>
+          <div class="price-main">
+            <span class="price-symbol">$</span><span class="price-whole">16</span><span class="price-fraction">99</span>
+          </div>
+        </div>
+        <div class="price-list">
+          <span class="price-list-label">List: </span><span class="price-strikethrough">$24.95</span>
+        </div>
+        <div class="price-per-unit">($4.25/Fl Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 4 Fl Oz</div>
+      <div class="coupon-badge">
+        <span class="coupon-check"><svg viewBox="0 0 16 16"><path d="M6.5 12.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></svg></span>
+        <span class="coupon-text">Save 20% with coupon</span>
+      </div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 7. B0CY6PR67C - M3 Naturals ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/31TzCiNmliL._AC_SL1500_.jpg" alt="M3 Naturals Magnesium Lotion" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-amazons-choice">Amazon's Choice</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B0CY6PR67C">Unscented Magnesium Lotion for Sleep &amp; Leg Cramps, Suitable for Sensitive Skin, Helps with Muscle Relaxation, Soothes Tired Legs &amp; Foot Aches &mdash; 8 fl oz by M3 Naturals</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.4</span>
+        <span class="stars" title="4.4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="review-count">(697)</span>
+      </div>
+      <div class="price-section">
+        <div class="price-main">
+          <span class="price-symbol">$</span><span class="price-whole">21</span><span class="price-fraction">81</span>
+        </div>
+        <div class="price-per-unit">($2.73/Fl Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 8 Fl Oz</div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 8. B0FN3RJ53V - Venture Pal Arnica ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/71I7a9uxjAL._AC_SL1500_.jpg" alt="Venture Pal Magnesium Lotion with Arnica" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-amazons-choice">Amazon's Choice</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B0FN3RJ53V">Magnesium Lotion with Arnica, MSM &amp; Boswellia &mdash; Cooling Magnesium Cream for Daily Comfort &amp; Relaxation &mdash; Lightweight Moisturizing Lotion for Legs &amp; Feet &mdash; Safe for Kids &mdash; 6 fl oz</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.5</span>
+        <span class="stars" title="4.5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="review-count">(209)</span>
+      </div>
+      <div class="bought-past">4K+ bought in past month</div>
+      <div class="price-section">
+        <div class="price-main">
+          <span class="price-symbol">$</span><span class="price-whole">19</span><span class="price-fraction">99</span>
+        </div>
+        <div class="price-per-unit">($3.33/Fl Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 6 Fl Oz</div>
+      <div class="coupon-badge">
+        <span class="coupon-check"><svg viewBox="0 0 16 16"><path d="M6.5 12.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></svg></span>
+        <span class="coupon-text">Save 20% with coupon</span>
+      </div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 9. B0FPNJVFL1 - Essentially KateS ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/41+6SvvkJ8L._AC_SL1500_.jpg" alt="Essentially KateS Magnesium Cream" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-amazons-choice">Amazon's Choice</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B0FPNJVFL1">Magnesium 31% Cream Lotion 4 Fl Oz - Infused with Ceramides 1, 3, 6II and Hyaluronic Acid - Soothing, Relaxing, Hydrating &mdash; Helps Relax Sore Muscles and Stiffness</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.4</span>
+        <span class="stars" title="4.4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="review-count">(1,982)</span>
+      </div>
+      <div class="bought-past">500+ bought in past month</div>
+      <div class="price-section">
+        <div class="price-main">
+          <span class="price-symbol">$</span><span class="price-whole">9</span><span class="price-fraction">99</span>
+        </div>
+        <div class="price-per-unit">($2.50/Fl Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 4 Fl Oz</div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 10. B0FHJ5J97Y - Solia ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/41E-JBKvlNL._AC_SL1500_.jpg" alt="Solia Magnesium Sleep Cream" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-amazons-choice">Amazon's Choice</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B0FHJ5J97Y">Solia Magnesium Sleep Cream, USA-Made Topical Magnesium Lotion for Sleep, Lavender Lotion for Feet Pain, Nighttime Mag Oil Body Butter, Foot Cream for Leg Cramps, Relaxing Rub for Muscle Soreness, 4oz</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.4</span>
+        <span class="stars" title="4.4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="review-count">(165)</span>
+      </div>
+      <div class="bought-past">1K+ bought in past month</div>
+      <div class="price-section">
+        <div style="display:flex;align-items:baseline;gap:6px;">
+          <span class="discount-pct">-33%</span>
+          <div class="price-main">
+            <span class="price-symbol">$</span><span class="price-whole">17</span><span class="price-fraction">99</span>
+          </div>
+        </div>
+        <div class="price-list">
+          <span class="price-list-label">List: </span><span class="price-strikethrough">$26.99</span>
+        </div>
+        <div class="price-per-unit">($4.50/Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 4 Oz</div>
+      <div class="coupon-badge">
+        <span class="coupon-check"><svg viewBox="0 0 16 16"><path d="M6.5 12.5l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4z"/></svg></span>
+        <span class="coupon-text">Save 20% with coupon</span>
+      </div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tomorrow, Mar 27</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>overnight</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+    <!-- ===== 11. B0CP898D7B - Seven Minerals ===== -->
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/71ZVMgWg+SL._AC_SL1500_.jpg" alt="Seven Minerals Magnesium Lotion" loading="lazy">
+      </div>
+      <div class="badge-wrap">
+        <span class="badge-amazons-choice">Amazon's Choice</span>
+      </div>
+      <div class="product-title">
+        <a href="https://www.amazon.com/dp/B0CP898D7B">Seven Minerals Magnesium Non-Greasy Lotion with Skin Friendly Ingredients - 8 fl oz</a>
+      </div>
+      <div class="stars-row">
+        <span class="stars-num">4.4</span>
+        <span class="stars" title="4.4 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+        <span class="review-count">(1,825)</span>
+      </div>
+      <div class="bought-past">700+ bought in past month</div>
+      <div class="price-section">
+        <div class="price-main">
+          <span class="price-symbol">$</span><span class="price-whole">24</span><span class="price-fraction">95</span>
+        </div>
+        <div class="price-per-unit">($3.12/Fl Oz)</div>
+      </div>
+      <div class="size-badge"><strong>Size:</strong> 8 Fl Oz</div>
+      <div class="prime-row">
+        <svg class="prime-logo" viewBox="0 0 68 16" xmlns="http://www.w3.org/2000/svg"><rect width="68" height="16" rx="2" fill="#232F3E"/><text x="4" y="12" fill="#fff" font-size="10" font-family="Arial,sans-serif" font-weight="bold">prime</text><text x="34" y="12" fill="#49A3CE" font-size="9" font-family="Arial,sans-serif">&#10003;</text></svg>
+        <span class="shipping-info">FREE delivery <span class="delivery-date">Tue, Mar 31</span></span>
+      </div>
+      <div class="fastest-delivery">Or fastest delivery <strong>Mon, Mar 30</strong></div>
+      <button class="add-to-cart">Add to cart</button>
+    </div>
+
+  </div><!-- /product-grid -->
+</div><!-- /main-content -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background:#232f3e; text-align:center; padding:14px; margin-top:20px;">
+  <a href="#" style="color:#fff; text-decoration:none; font-size:13px;">Back to top</a>
+</div>
+<div style="background:#232f3e; padding:30px 20px; display:flex; justify-content:center; gap:60px; flex-wrap:wrap; border-top:1px solid #3a4553;">
+  <div>
+    <div style="color:#fff; font-weight:700; font-size:14px; margin-bottom:8px;">Get to Know Us</div>
+    <div style="font-size:13px; color:#ddd; line-height:2;">Careers<br>Blog<br>About Amazon<br>Sustainability</div>
+  </div>
+  <div>
+    <div style="color:#fff; font-weight:700; font-size:14px; margin-bottom:8px;">Make Money with Us</div>
+    <div style="font-size:13px; color:#ddd; line-height:2;">Sell on Amazon<br>Amazon Business<br>Advertise Your Products</div>
+  </div>
+  <div>
+    <div style="color:#fff; font-weight:700; font-size:14px; margin-bottom:8px;">Amazon Payment Products</div>
+    <div style="font-size:13px; color:#ddd; line-height:2;">Amazon Visa<br>Amazon Store Card<br>Reload Your Balance<br>Gift Cards</div>
+  </div>
+  <div>
+    <div style="color:#fff; font-weight:700; font-size:14px; margin-bottom:8px;">Let Us Help You</div>
+    <div style="font-size:13px; color:#ddd; line-height:2;">Your Account<br>Your Orders<br>Shipping Rates<br>Returns &amp; Replacements</div>
+  </div>
+</div>
+<div style="background:#131921; padding:20px; text-align:center; color:#999; font-size:11px;">
+  &copy; 1996-2026, Amazon.com, Inc. or its affiliates
+</div>
+
+</body>
+</html>
